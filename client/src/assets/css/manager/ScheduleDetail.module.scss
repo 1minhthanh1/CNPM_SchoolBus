@@ -1,0 +1,337 @@
+.ScheduleDetailWrapper {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+
+
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: slideInFromRight 0.4s ease;
+  overflow: hidden;
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .backBtn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 4rem;
+      height: 4rem;
+      padding: 0;
+      font-size: 1.6rem;
+      font-weight: 600;
+      border-radius: 50%;
+
+      background: var(--accent-primary);
+      color: var(--text-on-accent);
+
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+
+      &:hover {
+        opacity: 0.85;
+        transform: scale(1.05);
+      }
+    }
+
+    h3 {
+      font-size: 2.4rem;
+      color: var(--text-primary);
+    }
+  }
+
+
+  .infoCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+
+    .infoCard {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.5rem;
+      border-radius: 12px;
+      min-height: 160px;
+      color: white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    .cardBackgroundIcon {
+      position: absolute;
+      bottom: -20px;
+      right: -15px;
+      font-size: 100px;
+      opacity: 0.15;
+      transform: rotate(-20deg);
+      color: white;
+      transition: transform 0.4s ease;
+    }
+
+    .infoCard:hover .cardBackgroundIcon {
+      transform: rotate(-10deg) scale(1.1);
+    }
+
+    .cardHeader {
+      .cardTitle {
+        font-size: 1.4rem;
+        font-weight: 600;
+        opacity: 0.9;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    .cardBody {
+      text-align: left;
+      margin-top: 1rem;
+    }
+
+    .cardValue {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .cardSubValue {
+      font-size: 1.4rem;
+      font-weight: 500;
+      opacity: 0.85;
+      margin-top: 4px;
+      display: block;
+    }
+
+    .weatherInfo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+
+      .weatherInfoIcon {
+        font-size: 2.6rem;
+      }
+    }
+
+
+    .weatherCard {
+      background: var(--weather-card-bg);
+    }
+    .trafficCard {
+      background: var(--traffic-card-bg);
+    }
+    .alertCard {
+      background: var(--alert-card-bg);
+    }
+  }
+
+  .routeInfo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+
+    background: var(--input-bg);
+
+    padding: 2rem;
+    border-radius: 0.8rem;
+    border: 1px solid var(--border-color);
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      label {
+        font-weight: 600;
+        font-size: 1.6rem;
+        color: var(--text-secondary);
+      }
+
+      span, input {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: var(--text-primary);
+      }
+
+      input {
+        border: 1px solid var(--border-color);
+        background-color: var(--bg-secondary) ;
+        border-radius: 6px;
+        padding: 0.8rem 1.2rem;
+        transition: 0.2s;
+
+        &:focus {
+
+          border-color: var(--accent-primary);
+          box-shadow: var(--accent-primary-shadow);
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .busSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    h5 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    select {
+      width: fit-content;
+      padding: 0.8rem 1.2rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+
+      background: var(--input-bg);
+      color: var(--text-primary);
+
+      font-size: 1.4rem;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover {
+        border-color: var(--accent-primary);
+      }
+    }
+
+    .busList {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+
+      .busChip {
+        position: relative;
+
+        background: var(--accent-primary);
+        color: var(--text-on-accent);
+
+        border-radius: 0.6rem;
+        padding: 1.2rem 1.6rem;
+        font-weight: 600;
+        font-size: 1.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+
+        &:hover {
+          transform: scale(1.05);
+          opacity: 0.85;
+        }
+
+        .remove {
+          position: absolute;
+          top: -8px;
+          right: -8px;
+
+          background: var(--status-danger-solid);
+          color: var(--text-on-solid-button);
+
+          border-radius: 50%;
+          width: 2.2rem;
+          height: 2.2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.4rem;
+          cursor: pointer;
+          transition: 0.2s;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+
+          &:hover {
+            transform: scale(1.1);
+            opacity: 0.85;
+          }
+        }
+      }
+
+      .noBus {
+        color: var(--text-secondary);
+        font-style: italic;
+      }
+    }
+  }
+
+  .btnGroup {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+
+    button {
+      border: none;
+      border-radius: 0.6rem;
+      padding: 1rem 2rem;
+      font-size: 1.4rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .editBtn {
+
+      background: var(--accent-primary);
+      color: var(--text-on-accent);
+      &:hover { opacity: 0.85; }
+    }
+
+    .cancelBtn {
+
+      background: var(--button-neutral-bg);
+      color: var(--button-neutral-text);
+      border: 1px solid var(--button-neutral-border);
+      &:hover { opacity: 0.85; }
+    }
+
+    .saveBtn {
+
+      background: var(--status-success-solid);
+      color: var(--text-on-solid-button);
+      &:hover { opacity: 0.85; }
+    }
+  }
+
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}

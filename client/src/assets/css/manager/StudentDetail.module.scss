@@ -1,0 +1,119 @@
+
+.studentDetailWrapper {
+  width: 100%;
+  padding: 20px;
+
+
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+
+  border-radius: 8px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  animation: slideInFromRight 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+
+
+  h4 {
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+    font-weight: 800;
+
+    color: var(--text-primary);
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+
+  .label {
+    font-weight: 600;
+    color: var(--text-secondary);
+    flex: 1;
+  }
+
+  .value {
+    flex: 2;
+    text-align: right;
+    color: var(--text-primary);
+  }
+
+  input,
+  select {
+    width: 50%;
+    padding: 1rem;
+
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+
+    border-radius: 6px;
+    font-size: 1.6rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+      box-shadow: var(--accent-primary-shadow);
+    }
+  }
+}
+
+.btnGroup {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.editBtn,
+.cancelBtn,
+.saveBtn {
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  border: none;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.editBtn {
+
+  background: var(--accent-primary);
+  color: var(--text-on-accent);
+  padding: 1.2rem 2rem;
+}
+
+.cancelBtn {
+
+  background: var(--button-neutral-bg);
+  border: 1px solid var(--button-neutral-border);
+  color: var(--button-neutral-text);
+}
+
+.saveBtn {
+
+  background: var(--status-success-solid);
+  color: var(--text-on-solid-button);
+}
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
